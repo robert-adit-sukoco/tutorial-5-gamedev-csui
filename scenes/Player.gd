@@ -10,14 +10,9 @@ const UP = Vector2(0,-1)
 var velocity = Vector2()
 
 onready var animation : AnimatedSprite = $AnimatedSprite
-onready var dash_cooldown_timer : Timer = $DashCooldownTimer
-var dash_ready = true
-var dash_cooldown_duration_sec = 5
-
 var double_jump_available = true
 
 func _ready():
-	dash_cooldown_timer.set_wait_time(dash_cooldown_duration_sec)
 	animation.play("idle")
 
 func get_input():
@@ -66,8 +61,3 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity, UP)
 
-
-
-func _on_DashCooldownTimer_timeout():
-	dash_cooldown_timer.set_wait_time(dash_cooldown_duration_sec)
-	pass # Replace with function body.

@@ -53,8 +53,5 @@ shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 9 )
-animation = "New Anim"
 
 [node name="DashCooldownTimer" type="Timer" parent="."]
-
-[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_DashCooldownTimer_timeout"]
